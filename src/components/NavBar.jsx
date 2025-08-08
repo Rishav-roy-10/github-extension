@@ -5,11 +5,7 @@ export const NavBar = () => (
         <img src="/Analyzer.png" alt="Logo" className="w-8 h-8 rounded" />
         <span className="text-white font-semibold">Issue Analyzer</span>
       </div>
-      <div className="flex items-center gap-4 text-sm">
-        <a href="#home" className="text-gray-300 hover:text-white">Home</a>
-        <a href="#docs" className="text-gray-300 hover:text-white">Docs</a>
-        <a href="#about" className="text-gray-300 hover:text-white">About</a>
-      </div>
+      <div />
     </div>
   </nav>
 );

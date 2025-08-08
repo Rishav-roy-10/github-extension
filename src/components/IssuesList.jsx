@@ -1,4 +1,4 @@
-import { formatDate, getFileFolder, getFileName, getLineRange } from './utils.js';
+import { formatDate, getFileFolder, getFileName, getLineRange } from './js/utils.js';
 
 export const IssuesList = ({ issues, analyzing, selectedIssue, onSelect, onGetAI, loadingAI }) => (
   <div className="bg-gray-800 rounded-lg shadow-lg border border-gray-700">

@@ -1,5 +1,5 @@
 import React from 'react';
-import { useIssueAnalyzer } from './useIssueAnalyzer.js';
+import { useIssueAnalyzer } from './js/useIssueAnalyzer.js';
 import { Header } from './Header.jsx';
 import { NavBar } from './NavBar.jsx';
 import { Footer } from './Footer.jsx';
@@ -25,7 +25,7 @@ const GitHubIssueAnalyzer = () => {
   return (
     <div className="min-h-screen bg-gray-900 text-gray-200">
       <NavBar />
-      <div id="home" className="max-w-7xl mx-auto p-6 scroll-mt-20">
+      <div className="max-w-7xl mx-auto p-6">
         <Header />
 
         <RepoInput
@@ -54,7 +54,7 @@ const GitHubIssueAnalyzer = () => {
           />
         </div>
 
-        <div id="docs" className="bg-gray-800 border border-gray-700 rounded-lg p-6 mt-6 scroll-mt-20">
+        <div className="bg-gray-800 border border-gray-700 rounded-lg p-6 mt-6">
           <h3 className="font-medium text-blue-300 mb-2">How to use:</h3>
           <div className="grid md:grid-cols-2 gap-4 text-blue-200 text-sm">
             <div>
@@ -76,14 +76,6 @@ const GitHubIssueAnalyzer = () => {
           </div>
         </div>
 
-        <div id="about" className="bg-gray-800 border border-gray-700 rounded-lg p-6 mt-6 scroll-mt-20">
-          <h3 className="font-medium text-white mb-2">About</h3>
-          <p className="text-gray-300 text-sm leading-6">
-            Issue Analyzer helps you fetch GitHub issues, view referenced files and line ranges, and generate
-            AI-powered solution suggestions to speed up debugging and implementation. It is built with React and Vite,
-            styled with Tailwind, and connects to a local API for analysis.
-          </p>
-        </div>
       </div>
       <Footer />
     </div>

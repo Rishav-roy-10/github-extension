@@ -20,15 +20,6 @@ const RepoInput = ({ repoUrl, setRepoUrl, analyzing, error, onAnalyze }) => {
   };
 
   // Auto-detect when a valid GitHub repo link is entered
-  useEffect(() => {
-    const githubRepoPattern = /^https:\/\/github\.com\/[^\/]+\/[^\/]+$/i;
-    if (githubRepoPattern.test(repoUrl.trim())) {
-      const timer = setTimeout(() => {
-        onAnalyze();
-      }, 800); // small delay so user can finish typing
-      return () => clearTimeout(timer);
-    }
-  }, [repoUrl, onAnalyze]);
 
   return (
     <div className="bg-gray-800 rounded-lg shadow p-3 mb-3 border border-gray-700 w-full min-w-0">

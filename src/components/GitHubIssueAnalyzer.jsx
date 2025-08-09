@@ -1,11 +1,11 @@
-import React from 'react';
-import { useIssueAnalyzer } from './js/useIssueAnalyzer.js';
-import { Header } from './Header.jsx';
-import { NavBar } from './NavBar.jsx';
-import { Footer } from './Footer.jsx';
-import { RepoInput } from './RepoInput.jsx';
-import { IssuesList } from './IssuesList.jsx';
-import { AISolutions } from './AISolutions.jsx';
+import React from "react";
+import { useIssueAnalyzer } from "./js/useIssueAnalyzer.js";
+import Header from "./Header.jsx";
+import NavBar from "./NavBar.jsx";
+import Footer from "./Footer.jsx";
+import RepoInput from "./RepoInput.jsx";
+import IssuesList from "./IssuesList.jsx";
+import AISolutions from "./AISolutions.jsx";
 
 const GitHubIssueAnalyzer = () => {
   const {
@@ -23,11 +23,12 @@ const GitHubIssueAnalyzer = () => {
   } = useIssueAnalyzer();
 
   return (
-    <div className="min-h-screen bg-gray-900 text-gray-200">
-      <NavBar />
-      <div className="max-w-7xl mx-auto p-6">
+    <div className="bg-gray-900 text-gray-200 flex flex-col w-full h-full min-w-0 overflow-hidden rounded-lg">
+      {/* Scrollable main area */}
+      <div className="flex-1 overflow-y-auto p-2 sm:p-4 min-w-0">
         <Header />
 
+        {/* Repo Input */}
         <RepoInput
           repoUrl={repoUrl}
           setRepoUrl={setRepoUrl}
@@ -36,7 +37,8 @@ const GitHubIssueAnalyzer = () => {
           onAnalyze={analyzeRepo}
         />
 
-        <div className="grid grid-cols-1 xl:grid-cols-2 gap-6">
+        {/* Issues & AI Solutions */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4 min-w-0">
           <IssuesList
             issues={issues}
             analyzing={analyzing}
@@ -54,11 +56,12 @@ const GitHubIssueAnalyzer = () => {
           />
         </div>
 
-        <div className="bg-gray-800 border border-gray-700 rounded-lg p-6 mt-6">
+        {/* How to Use */}
+        <div className="bg-gray-800 border border-gray-700 rounded-lg p-3 sm:p-4 mt-4">
           <h3 className="font-medium text-blue-300 mb-2">How to use:</h3>
-          <div className="grid md:grid-cols-2 gap-4 text-blue-200 text-sm">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-blue-200 text-xs sm:text-sm">
             <div>
-              <h4 className="font-medium mb-1">Left Form (GitHub Issues):</h4>
+              <h4 className="font-medium mb-1">Left Panel (GitHub Issues):</h4>
               <ul className="list-disc list-inside space-y-1">
                 <li>Shows repository issues with file references</li>
                 <li>Displays folder structure and code locations</li>
@@ -66,7 +69,7 @@ const GitHubIssueAnalyzer = () => {
               </ul>
             </div>
             <div>
-              <h4 className="font-medium mb-1">Right Form (AI Solutions):</h4>
+              <h4 className="font-medium mb-1">Right Panel (AI Solutions):</h4>
               <ul className="list-disc list-inside space-y-1">
                 <li>Shows detailed AI analysis of selected issue</li>
                 <li>Provides step-by-step solutions and code fixes</li>
@@ -75,13 +78,9 @@ const GitHubIssueAnalyzer = () => {
             </div>
           </div>
         </div>
-
       </div>
-      <Footer />
     </div>
   );
 };
 
 export default GitHubIssueAnalyzer;
-
-

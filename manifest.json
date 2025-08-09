@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "GitHub Issue Analyzer",
+  "version": "1.0",
+  "description": "Analyzes GitHub issues and provides AI solutions",
+  "permissions": [
+    "storage",
+    "tabs",
+    "activeTab",
+    "scripting"
+  ],
+  "host_permissions": [
+    "https://api.github.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "icons": {
+    "16": "public/Logo.png",
+    "48": "public/Logo.png",
+    "128": "public/Logo.png"
+  }
+}
